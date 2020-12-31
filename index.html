@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div id="app" class="app app-background-dark">
+    
+    <div id="inicio_juego" class="modal-container">
+      <div class="blur-modal"></div>
+      <div class="modal">
+        <h2 class="modal-title">Simon</h2>
+        <input id="nombre_jugador" class="modal-input" type="text" placeholder="Nombre" />
+        <button class="modal-button" onclick="accionModalInicio()">Comenzar</button>
+      </div>
+    </div>
+
+    <div id="fin_juego" class="modal-container hide">
+      <div class="blur-modal"></div>
+      <div class="modal">
+        <h2 class="modal-title">Simon</h2>
+        <p id="puntaje"></p>
+        <button class="modal-button" onclick="accionModalFin()">Volver a jugar</button>
+      </div>
+    </div>
+    
+    <div id="juego" class="game hide">
+      <span id="nombre_usuario" class="nombre-usuario"></span>
+      <span id="cuenta_regresiva" class="cuenta-regresiva"></span>
+      <span id="turno_texto" class="turno-texto"></span>
+      <button id="top_left" class="simon-button" onclick="clickBoton('top_left')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="233" height="232" viewBox="0 0 233 232">
+          <path fill-rule="evenodd" d="M1.512 192.907c11.468-53.362 32.871-95.72 64.21-127.072C97.08 34.465 139.695 12.802 193.566.845c17.254-3.83 34.345 7.053 38.174 24.306.51 2.293.764 4.636.76 6.985l-.115 71.473c-.024 14.665-9.723 27.556-23.808 31.64-18.992 5.508-35.005 14.342-48.039 26.503-13.43 12.53-23.639 28.536-30.628 48.02-4.703 13.112-17.132 21.858-31.062 21.858h-66.05c-17.673 0-32-14.327-32-32 0-2.26.24-4.514.715-6.723z" />
+        </svg>
+      </button>
+      <button id="top_right" class="simon-button" onclick="clickBoton('top_right')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="232" height="232" viewBox="0 0 232 232">
+          <path fill-rule="evenodd" d="M231.089 192.907c-11.468-53.362-32.872-95.72-64.211-127.072C135.52 34.465 92.906 12.802 39.035.845 21.782-2.985 4.691 7.898.861 25.151c-.509 2.293-.764 4.636-.76 6.985l.115 71.473c.024 14.665 9.723 27.556 23.809 31.64 18.992 5.508 35.004 14.342 48.038 26.503 13.43 12.53 23.64 28.536 30.628 48.02 4.703 13.112 17.133 21.858 31.062 21.858h66.05c17.673 0 32-14.327 32-32 0-2.26-.24-4.514-.714-6.723z" />
+        </svg>
+      </button>
+      <button id="bottom_left" class="simon-button" onclick="clickBoton('bottom_left')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="233" height="232" viewBox="0 0 233 232">
+          <path fill-rule="evenodd" d="M1.264 39.115c11.468 53.362 32.872 95.719 64.211 127.071 31.357 31.37 73.972 53.033 127.843 64.99 17.253 3.83 34.344-7.052 38.174-24.305.509-2.294.764-4.637.76-6.986l-.115-71.472c-.024-14.666-9.723-27.556-23.809-31.641-18.992-5.508-35.004-14.342-48.038-26.502-13.43-12.53-23.64-28.537-30.628-48.02C124.959 9.138 112.529.39 98.6.39H32.55c-17.673 0-32 14.327-32 32 0 2.26.24 4.514.714 6.724z" />
+        </svg>
+      </button>
+      <button id="bottom_right" class="simon-button" onclick="clickBoton('bottom_right')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="233" height="232" viewBox="0 0 233 232">
+          <path fill-rule="evenodd" d="M231.841 39.115c-11.468 53.362-32.871 95.719-64.21 127.071-31.358 31.37-73.972 53.033-127.843 64.99-17.254 3.83-34.345-7.052-38.174-24.305-.51-2.294-.764-4.637-.76-6.986l.115-71.472c.024-14.666 9.723-27.556 23.808-31.641C43.77 91.264 59.782 82.43 72.816 70.27c13.43-12.53 23.639-28.537 30.627-48.02C108.146 9.138 120.576.39 134.506.39h66.05c17.673 0 32 14.327 32 32 0 2.26-.24 4.514-.715 6.724z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>
